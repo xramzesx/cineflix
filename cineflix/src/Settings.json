@@ -1,0 +1,7 @@
+{
+    "basename" : "/",
+    "openHours" : {
+        "start" : 9,
+        "end" : 24
+    }
+}

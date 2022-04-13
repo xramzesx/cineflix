@@ -1,0 +1,229 @@
+@import './variables.scss';
+
+.container {
+
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  // position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background: rgb(0,0,170);
+  background: linear-gradient(0deg, rgba(0,0,170,1) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  padding: .5rem;
+  z-index: 10;
+
+  .navbar__logo,
+  a {
+    padding: 1rem;
+    margin: .5rem 1rem;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $light-color;
+    text-decoration: none;
+    // height: 100%;
+    
+    position: relative;
+
+    transition: background-color .5s ease;
+
+    
+    img {
+      height: 1rem;
+      transform: scale(1.5);
+      padding: 0 .5rem;
+      // translate: scaleX( 5 );
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+      border: .05rem solid $light-color;
+      transition: 
+        transform .25s ease,
+        background-color .25s ease;
+    }
+
+    &::after {
+      transform: translate(.25rem, -.25rem);
+    }
+
+    &::before {
+      transform: translate(-.25rem, .25rem);
+      // border-color: blue;
+    }
+    
+    background-color: #0004;
+
+    // z-index: 1;
+    &:hover,
+    &:focus {
+      background-color: #0009;
+      // background-color: #121231;
+
+      outline: none;
+
+      .selected::after,
+      .selected::before,
+      &::after,
+      &::before{
+        transform: translate(0);
+      }
+    }
+  }
+
+  .link--icon {
+    
+    padding: .75rem;
+    border-radius: 100%;
+    // border : .2rem solid $light-color;
+    background-color: transparent;
+    
+    &::after,
+    &::before {
+      // border: none;
+      border-radius: 100%;
+      border-width: .1rem;
+      height: calc( 100% - .75rem * 2 - 1px);
+      width: calc( 100% - .75rem * 2  - 1px);
+
+      top : 50%;
+      left: 50%;
+
+
+
+      transform: translate(-50%, -50%);
+      
+      // border-radius: 100%;
+      // border-width: .1rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      // filter: drop-shadow(0 0 .5rem $light-color);
+
+      &::after,
+      &::before{
+        // border: .1rem;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+
+    img {
+      height: 2rem;
+    }
+  }
+
+  .navbar__logo {
+    height: inherit;
+  }
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  // background-color: #121216;
+}
+
+.content {
+  flex: 1 0 auto;
+  // min-height: calc( 100vh - 9rem);
+  // min-height: calc( 100vh - 5.5rem);
+  padding-top: 5.5rem;;
+  min-height: 100vh;
+  // color: white;
+}
+
+
+.subsection {
+  // page-break-inside: avoid;
+  // break-inside: avoid-column;
+  // border : 2px solid wheat;
+
+  // flex-basis: 1;
+
+  // width: 100%;
+  // min-width: 20rem;
+  padding: 1rem;
+  position: relative;
+
+  
+
+  // width: calc( 100%/3 );
+  background-color: $darkest-color;
+  // min-height: 50vmin;
+
+  &::after,
+  &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border : .2rem solid $light-color;
+      box-sizing: border-box;
+      pointer-events: none;
+      // grid-template-columns: repeat();
+  }
+
+  &::before {
+      transform: translate(-.5rem,.5rem);
+      border-style: dotted;
+      opacity: .7;
+  }
+
+  &::after {
+      transform: translate(.5rem, -.5rem);
+      // border-style: groove;
+      opacity: .8;
+
+  }
+}
+
+.content--no-padding {
+  padding-top: inherit;
+}
+
+.section--no-padding {
+  padding: 0;
+  // padding: 0 !important;
+}
+
+.message--invalid {
+  display: inline-flex;
+  
+  justify-content: center;
+  align-items: center;
+
+  padding: .5rem;
+
+  background-color: red;
+}
+
+.footer {
+  color: $light-color;
+  background-color: $darkest-color;
+  padding: 3rem;
+  min-height: 10rem;
+  flex-shrink: 0;
+}

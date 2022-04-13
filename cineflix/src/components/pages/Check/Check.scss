@@ -1,0 +1,74 @@
+@import '../../../variables.scss';
+
+.content--check-reservation {
+    color: $light-color;
+
+}
+
+.section--check-form {
+    display: flex;
+    gap: 2rem;
+}
+
+.subsection--check-form {
+    padding: 2rem 1.5rem ;
+}
+
+.check__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    form {
+        // border : .25rem solid $light-color;
+        padding: 1rem;
+    }
+}
+
+.subprop--seance-message{
+    border : .1rem solid $light-color;
+    margin: .5rem;
+}
+
+.check--alert {
+    background-color: red;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.check--reservations-list {
+    padding: 2rem;
+    table {
+        border: none;
+        margin: 0 auto;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        thead , tbody{
+            width: 100%;   
+            // display: flex;
+            // flex-direction: column;
+            // background-color: turquoise;
+        }
+
+        tbody tr {
+            &:hover {
+                background-color: $light-color;
+                color: $dark-color;
+                cursor: pointer;
+            }
+        }
+        th,td {
+            border: none;
+            padding: .5rem;
+        }
+    }
+}
+
+.check--row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

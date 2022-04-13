@@ -1,0 +1,249 @@
+@import "../../../variables.scss";
+
+.content--reserve {
+    color: $light-color;
+
+    .section {
+        display: inline-flex;
+
+        table {
+            display: inline-block;
+            // width: 100%;
+            border: none;
+            tr {
+                // width: 100vw;
+                // background-color: $light-color;
+                border: none;
+            }
+            th,td {
+                padding: 1rem;
+                margin: .5rem;
+                // color: $dark-color;
+                border: none;
+            }
+
+            tfoot,
+            thead {
+                color: $dark-color;
+                background-color: $light-color;
+            }
+
+
+        }
+    }
+}
+
+.screening-room {
+    display: inline-grid;
+    grid-template-columns: repeat(20, auto);
+    position: relative;
+    margin: 0 auto;
+
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+    width: 100%;
+    &__seat {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        // height: 2rem;
+        // width: 2rem;
+        background-color: transparent;
+        padding: .75rem;
+        font-size: .9rem;
+        cursor: pointer;
+        color: $light-color;
+        border: none;
+        outline: none;
+        
+        position: relative;
+
+        transition: 
+            background-color .25s ease,
+            color .25s ease;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: .025rem solid $light-color;
+            opacity: .5;
+
+            $transition : .25s ease ;
+            transition: 
+                border-width $transition,
+                opacity $transition,
+                transform $transition;
+        }
+
+        &::before {
+            transform: translate(-.15rem,.15rem);
+        }
+        &::after {
+            transform: translate(.15rem,-.15rem);
+        }
+
+        &:focus,
+        &:hover {
+            
+            &::before,
+            &::after{
+                opacity: .75;
+                border-width: .05rem;
+            }
+
+            &::before {
+                transform: translate(-.1rem,.1rem);
+            }
+            &::after {
+                transform: translate(.1rem,-.1rem);
+            }
+        }
+
+        &:active {
+            &::before,
+            &::after {
+                transform: none;
+                border-width: .1rem;
+                opacity: 1;
+            }
+        }
+
+        &--selected {
+            background-color: $light-color;
+            color: $dark-color;
+        }
+        &--disabled {
+            background-color: turquoise;
+            opacity: .4;
+        }
+    }
+
+    &__screen {
+        grid-column: 1/21;
+        background-color: $light-color;
+        color: $dark-color;
+        padding: 1rem;
+        p {
+            position: sticky;
+            left: 0;
+        }
+    }
+
+    &--hidden {
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+    }
+    
+    &::-webkit-scrollbar {
+        width: .25em;
+        height: .5em;
+        // border-left: 1px solid white;
+        // background-color: transparent;
+        // background-color: $darkest-color;
+        // box-sizing: content-box;
+        // position: absolute;
+    }
+
+    &::-webkit-scrollbar * {
+
+        // background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: .5em;
+        // outline: 1px solid slategrey;
+    }
+}
+
+
+.reserve--sum-up {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+    align-items: flex-start;
+    // justify-content: stretch;
+}
+
+.reserve__info {
+    // display: grid;
+    // grid-template-columns: auto 1fr;
+    // flex-direction: column;
+    // width: 100%;
+    gap: 1rem;
+    // padding: 2rem;
+    flex: 2;
+    position: relative;
+
+    &> *{
+        grid-column: 1/2;
+        margin: .25rem .5rem;
+        display: flex ;
+        flex-direction: column;
+    }
+
+    &--row {
+        display: flex;
+    }
+}
+
+.reserve__seance-data,
+.reserve__client-data {
+    // border: .1rem solid $light-color;
+    display: inline-block;
+    p {
+        padding: .5rem;
+    }
+}
+
+.reserve__info--form {
+    padding: 1rem .5rem;
+    padding-top: 0;
+}
+
+.reserve__client-data {
+    border: .1rem solid $light-color;
+}
+
+.reserve__form {
+    // background-color: turquoise;
+    display: flex;
+    flex-direction: column;
+    &> *{
+        grid-column: 1/2;
+        // margin: .25rem .5rem;
+        display: flex ;
+        flex-direction: column;
+    }
+    padding-bottom: 1rem;
+}
+
+.reserve__seance-message {
+    margin: 2rem 1rem;
+    margin-right: 30rem;
+    max-width: 20rem;
+}
+
+.overlay--screening-room {
+    background-color: transparentize($dark-color, .1);
+    &__div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}

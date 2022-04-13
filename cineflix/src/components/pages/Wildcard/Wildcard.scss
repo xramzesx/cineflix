@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.wildcard {
+    // font-size: 2rem;
+    color: $light-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__code {
+        font-size: 10rem;
+    }
+    &__message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        padding: .5rem;
+    }
+
+    &__path {
+        padding: .1rem;
+        background-color: $darkest-color;
+    }
+}

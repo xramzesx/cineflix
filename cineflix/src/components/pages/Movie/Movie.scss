@@ -1,0 +1,118 @@
+@import '../../../variables.scss';
+
+.movie-content {
+    color: $light-color;
+    // display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    // gap: 2rem;
+    padding-top: 5.5rem;
+    background-color: $darkest-color;
+
+    // height: calc( 100vh - 5.5rem );
+
+    // box-sizing: border-box !important;
+    &__poster {
+        img {
+            height: calc(100vh - 5.5rem);
+            // width: 100%;
+            display: inline-block;
+
+        }
+        height: calc(100vh - 5.5rem);
+            // max-height: 100vh;
+    }
+    &__informations {
+        background-color: $dark-color;
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        // background: rgb(2,0,36);
+        // background: linear-gradient(130deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    
+    &__informations > {
+        * { 
+            padding: 1rem 2rem;
+        }
+    }
+
+    &__title {
+        padding: 2rem;
+    }
+
+    &__description {
+    }
+    
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__buttons > {
+        * {
+            width: initial !important;
+            display: inline-block;
+            margin-left : 1rem;
+            margin-right: 1rem; 
+        }
+    }
+
+    &__props {
+        padding-top: 0;
+        padding-bottom: 2rem;
+        justify-content: flex-end;
+        display: flex;
+    }
+}
+
+
+.reservation-title,
+.reservations-list {
+    color: $light-color;
+}
+
+.reservations-list {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    &__info {
+        tr {
+            padding: 2rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $light-color;
+    }
+
+    table {
+        th {
+            padding: 1rem;
+        }
+        thead {
+            background-color: $light-color;
+            color: $darkest-color;
+            width: 100%;
+        }
+        width: 100%;
+        td { 
+            // background-color: red;
+        }
+        tbody {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        // width: 100%;
+        tr {
+            text-align: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../../../variables.scss';
+a.player,
+.player {
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $light-color;
+
+    position: relative;
+    &__youtube {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+    
+    &__title {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        opacity: .1;
+
+        background: linear-gradient(
+            180deg, 
+            rgba(0,0,170,1) 0%, 
+            rgba(0,0,0,0) 0%, 
+            rgba(0,0,0,0.75) 100%
+        );
+
+        transform: translateY(2rem);
+
+        transition: 
+            opacity .25s ease,
+            transform .25s ease;
+
+        h1 {
+            padding: 3rem;
+            font-size: 4em;
+        }
+
+        &:hover {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}

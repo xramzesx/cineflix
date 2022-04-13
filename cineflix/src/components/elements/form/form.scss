@@ -1,0 +1,256 @@
+@import '../../../variables.scss';
+
+fieldset {
+    border: none;
+}
+
+.select-box,
+.textbox {
+    // padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: yellowgreen;
+    background-color: $light-color;
+
+    // margin: 3rem .5rem;
+
+    margin: 3rem .5rem 0 .5rem;
+    padding: 0;
+    transition: transform .25s ease;
+    
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: .1rem solid $light-color;
+
+        pointer-events: none;
+        box-sizing: border-box;
+        transition: transform .25s ease;
+        // background-color: yellow;
+    }
+
+    &::before {
+        transform: translate(-.25rem, .25rem);
+    }
+
+    &::after {
+        transform: translate(.25rem, -.25rem);
+    }
+
+    &:focus {
+        background-color: yellow;
+    }
+
+    position: relative;
+}
+
+
+// .textbox--fill,
+.select-box--focused,
+.textbox--focus,
+.textbox:focus {
+    &::after,
+    &::before{
+        transform: none;
+        // padding: 1.2rem;
+    }
+}
+
+@mixin trans_label {
+    top: 0;
+    left: 0;
+    // left: -1rem;
+    transform: translateY(calc(-100% - .5rem));
+    border-color: $light-color;
+    color: $light-color;
+}
+
+.select-box .select__label,
+.textbox--fill .textbox__label {
+    @include trans_label();
+}
+
+textarea {
+    resize: none;
+}
+.select,
+.textbox__input {
+    width: 100%;
+    height: 100%;
+    
+    position: relative;
+    padding: .75rem .75rem;
+
+    transition: 
+        background-color .1s ease,
+        opacity .1s ease;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    // width: 100%;
+    // height: 100;
+
+    outline: none;
+    border: none;
+
+    opacity: .5;
+
+    // background-color: ;
+
+    // &:valid ~ .textbox__label {
+    //     // background-color: blue;
+    //     @include trans_label();
+    //     // background-color: $light-color;
+    // }
+
+    
+
+    &:focus,
+    &:hover {
+        opacity: 1;
+        background-color: $white;
+    }
+}
+
+.select__label,
+.textbox__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+
+    user-select: none;
+    pointer-events: none;
+
+    border : .1rem solid transparent;
+
+    $trans-ease : .25s ease;
+    padding: .1rem .25rem;
+
+    transition: 
+        transform $trans-ease,
+        top $trans-ease,
+        left $trans-ease,
+        background-color $trans-ease,
+        border $trans-ease,
+        border-color $trans-ease,
+        color $trans-ease;
+}
+
+
+.submit {
+    .textbox__input {
+        cursor: pointer;
+        background-color: darken($distinction-color, 10%);
+        opacity: 1;
+        color: $light-color;
+        &:hover,
+        &:focus {
+            background-color: $distinction-color;
+        }
+    }
+    
+    margin-top: 1.5rem;
+}
+
+
+
+.form__message {
+    padding: .5rem;
+    color: red;
+}
+
+
+.select {
+    width: 100%;
+    padding: .5rem;
+}
+
+input[type="file"] {
+    color: $dark-color;
+}
+
+// .input {
+//     position: relative;
+// }
+
+// .input--focused {
+// }
+
+// .input__inp {
+//     padding : 1em 1em 1em .5em;
+
+//     display : block;
+//     width : 100%;
+
+//     position: relative;
+
+//     display: inline-block;
+
+//     &::after,
+//     &::before{
+//         content: "";
+//         border: 20px solid yellow !important;
+//         display: block;
+//         position: absolute;
+
+//         top: 0;
+//         left: 0;
+//         height: 100%;
+//         width: 100%;
+//     }
+
+//     &::before {
+//         transform: translateX(-.5rem);
+//         background-color: yellowgreen;
+//         // z-index: 1000;
+//     }
+
+//     &:focus {
+//         outline : none;
+//         background-color: yellow;
+//     }
+
+//     &:focus ~ .input__label,
+//     &:valid ~ .input__label
+//      {
+//         top : -1em;
+//         // color : #5264AE;
+//         transform : scale(.9);
+//         // background-color: yellow;
+//     }
+
+// }
+
+// .input__label {
+//     left : .5em;
+//     top : .5em;
+    
+//     position : absolute;
+//     pointer-events : none;
+//     user-select : none;
+
+//     // color : #444;
+//     // background-color : #fff;
+    
+//     padding : 0 .25em ;
+//     border-radius : .5em;
+
+//     transform-origin : top left;
+
+//     transition : 
+//         left .2s ease,
+//         top .2s ease,
+//         transform .2s ease;
+// }
