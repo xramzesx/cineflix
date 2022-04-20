@@ -13,6 +13,35 @@ I coded it in 2020 for Server Applications course in Upper-Secondary Schools of 
 - React Router + React Switch
 - practical PHP
 
+## Screenshots:
+
+### User panel:
+![image](blobs/user_panel.png)  
+
+### Admin panel:
+![image](blobs/admin_panel.png)
+
+### Admin panel - add movie
+![image](blobs/admin_panel_add_movie.png)
+
+### Admin panel - add seance
+![image](blobs/admin_panel_add_seance.png)
+
+### Movie page
+![image](blobs/movie_page.png)
+
+### Movie page - reservation
+![image](blobs/movie_page_reservation.png)
+
+### Reservation - seat selection
+![image](blobs/seance_seat_selection.png)
+
+### Reservation - summary
+![image](blobs/seance_summary.png)
+
+### Reservation - check
+![image](blobs/reservation_check.png)
+
 
 ## Original README (in Polish 🇵🇱):
 
@@ -91,7 +120,7 @@ Ponadto 2 pliki leżą bezpośrednio:
 
 Struktura bazy wraz z relacjami :
 
-![image.png](https://mail.google.com/mail/u/1?ui=2&ik=1c1cf6264a&attid=0.1&permmsgid=msg-a:r-7216269704673739797&th=175f2a3d78cdb2ea&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9Rk5zslZRj6gWjaXzV8_V4za7kTiIyk4gKyITfqYMMld1Ra1XMpcNohnzLUkdwk6GxOa2gBYgxTKGSeLG_z_AKL5zIGLRBlv7HLaTJh-Mgz1IqirdnpaX_70o&disp=emb&realattid=ii_khtssi3z0)  
+![database structure](blobs/database_structure.png)  
 
   
 
