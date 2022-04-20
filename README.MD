@@ -6,7 +6,7 @@ I coded it in 2020 for Server Applications course in Upper-Secondary Schools of 
 - To run this project you need Apache + MySQL Server
 - To build this project type in `cineflix` directory `npm run build`
 ### Used technology
-- HTML, CSS, JavaScript
+- HTML, SCSS, JavaScript
 - React
 - PHP
 ## Some things that I learned:
